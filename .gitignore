@@ -1,0 +1,11 @@
+# Backend
+backend/target
+backend/*.log
+backend/.idea
+
+# Frontend
+frontend/app/node_modules
+frontend/app/dist
+
+# General
+.env
