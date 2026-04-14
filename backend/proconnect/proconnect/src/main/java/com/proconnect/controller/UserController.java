@@ -1,5 +1,6 @@
 package com.proconnect.controller;
 
+import com.proconnect.dto.LoginRequest;
 import com.proconnect.model.User;
 import com.proconnect.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,16 @@ public class UserController {
             return ResponseEntity.ok(savedUser);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody LoginRequest request) {
+        try {
+            User user = userService.login(request.getEmail(), request.getPassword());
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(401).body(e.getMessage());
         }
     }
 }
