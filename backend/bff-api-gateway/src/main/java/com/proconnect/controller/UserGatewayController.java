@@ -32,4 +32,13 @@ public class UserGatewayController {
             return ResponseEntity.status(500).body("Error al redirigir al microservicio de usuarios: " + e.getMessage());
         }
     }
+    @GetMapping("/professionals")
+    public ResponseEntity<?> getProfessionals() {
+        try {
+            ResponseEntity<Object> response = restTemplate.getForEntity(USER_SERVICE_URL + "/professionals", Object.class);
+            return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error al redirigir al microservicio de usuarios: " + e.getMessage());
+        }
+    }
 }
