@@ -47,6 +47,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public List<User> getProfessionals() {
+        return userRepository.findByRole(Role.PROFESSIONAL);
+    }
+
     public User login(String email, String rawPassword) {
         Optional<User> userOptional = userRepository.findByEmail(email);
         if (userOptional.isPresent()) {

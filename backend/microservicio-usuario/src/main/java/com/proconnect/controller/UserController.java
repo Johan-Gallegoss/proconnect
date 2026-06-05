@@ -39,4 +39,9 @@ public class UserController {
             return ResponseEntity.status(401).body(e.getMessage());
         }
     }
+    @GetMapping("/professionals")
+    public ResponseEntity<List<User>> getProfessionals() {
+        List<User> professionals = userService.getProfessionals();
+        return ResponseEntity.ok(professionals);
+    }
 }
