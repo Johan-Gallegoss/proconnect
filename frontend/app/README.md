@@ -1,16 +1,46 @@
-# React + Vite
+# ProConnect - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el repositorio del cliente de usuario para ProConnect, construido con React, Vite y empaquetado mediante NPM.
 
-Currently, two official plugins are available:
+## Requisitos Previos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org/) (versión 18 o superior recomendada)
+- NPM (viene preinstalado con Node.js)
 
-## React Compiler
+## Instalación de dependencias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Una vez clonado el repositorio, navega a esta carpeta (`frontend/app`) y ejecuta el siguiente comando para descargar e instalar todas las dependencias listadas en el `package.json`:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Ejecución en entorno de desarrollo
+
+Para iniciar el servidor de desarrollo con Hot-Module-Replacement (HMR), ejecuta:
+
+```bash
+npm run dev
+```
+
+Esto levantará el servidor, usualmente en `http://localhost:5173/`, donde podrás probar y visualizar la interfaz del usuario.
+
+## Construcción para Producción
+
+Para compilar y empaquetar la aplicación lista para un entorno de producción (generando archivos minificados en la carpeta `dist`), ejecuta:
+
+```bash
+npm run build
+```
+
+## Ejecutar pruebas (si están configuradas)
+
+```bash
+npm test
+```
+
+## Estructura del Proyecto
+- `/src`: Contiene todo el código fuente, componentes React, estilos y utilidades.
+- `/public`: Activos estáticos públicos que no requieren procesamiento de Webpack/Vite.
+- `package.json`: Definición de dependencias y scripts de NPM.
+- `vite.config.js`: Configuración del empaquetador Vite.
